@@ -8,7 +8,7 @@ inputs:
     description: Labels to add
     required: true
   action:
-    description: "`add` or `remove` a label"
+    description: "`add` or `remove` label"
     default: add
     required: false
 

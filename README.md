@@ -8,6 +8,10 @@ A GitHub Action to add labels on PR / Issue events
 
 **Required** Labels to add.
 
+### `action`
+
+**Optional** `add` or `remove` label
+
 ## Example usage
 
 ```yaml
@@ -26,6 +30,7 @@ jobs:
       - uses: okineadev/add-labels@v1
         with:
           labels: bug
+          action: add
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
