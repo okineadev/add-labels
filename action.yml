@@ -1,0 +1,24 @@
+name: Add Labels
+description: Add labels on Pull Requests or Issues
+
+author: Okinea Dev
+
+inputs:
+  labels:
+    description: Labels to add
+    required: true
+  action:
+    description: "`add` or `remove` a label"
+    default: add
+    required: false
+
+runs:
+  using: composite
+  steps:
+    - name: 🔖 Add labels
+      shell: bash
+      run: ${{ github.action_path }}/add-labels.sh "${{ github.event.number }}" "${{ inputs.action }}" "${{ inputs.labels }}"
+
+branding:
+  icon: tag # 🏷️
+  color: yellow # 🟡
