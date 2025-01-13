@@ -5,7 +5,7 @@ author: Okinea Dev
 
 inputs:
   labels:
-    description: Labels to add
+    description: A comma-separated list of labels
     required: true
   action:
     description: "`add` or `remove` label"
@@ -15,9 +15,9 @@ inputs:
 runs:
   using: composite
   steps:
-    - name: 🔖 Add labels
+    - name: 🔖 Add or remove labels
       shell: bash
-      run: ${{ github.action_path }}/add-labels.sh "${{ github.event.number }}" "${{ inputs.action }}" "${{ inputs.labels }}"
+      run: ${{ github.action_path }}/add-or-remove-labels.sh "${{ github.event.number }}" "${{ inputs.action }}" "${{ inputs.labels }}"
 
 branding:
   icon: tag # 🏷️

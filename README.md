@@ -1,16 +1,22 @@
 # Add Labels
 
-A GitHub Action to add labels on PR / Issue events
+A GitHub Action to add or remove labels on PR / Issues
 
 ## Inputs
 
 ### `labels`
 
-**Required** Labels to add.
+**Required** A comma-separated list of labels.
+
+**Example**: `bug,help-needed`
 
 ### `action`
 
 **Optional** `add` or `remove` label
+
+**Default**: `add`
+
+**Example**: `add`
 
 ## Example usage
 
@@ -27,10 +33,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4.2.2
-      - uses: okineadev/add-labels@v1
+      - uses: okineadev/add-labels@v1.0.2
         with:
-          labels: bug
-          action: add
+          labels: bug,help-needed
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
