@@ -2,7 +2,7 @@
 
 A GitHub Action to add or remove labels on PR / Issues
 
-## Inputs
+## Inputsm
 
 ### `labels`
 
