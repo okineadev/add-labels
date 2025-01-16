@@ -1,0 +1,8 @@
+{
+    "recommendations": [
+        "github.vscode-github-actions",
+        "docsmsft.docs-yaml",
+        "mads-hartmann.bash-ide-vscode",
+        "foxundermoon.shell-format"
+    ]
+}
