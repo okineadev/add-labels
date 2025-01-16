@@ -1,6 +1,6 @@
-# Add Labels
+# 🔖 Add or remove labels
 
-A GitHub Action to add or remove labels on PR / Issues
+A **GitHub Action** to add or remove labels on PRs or issues
 
 ## Inputs
 
@@ -33,7 +33,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4.2.2
-      - uses: okineadev/add-labels@v1.0.2
+      - uses: material-extensions/add-labels@v1.0.5
         with:
           labels: bug,help-needed
         env:

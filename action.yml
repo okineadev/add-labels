@@ -1,14 +1,16 @@
 name: Add Or Remove Labels
-description: Add labels on Pull Requests or Issues
+description: Add or remove labels on PRs or issues
 
 author: Okinea Dev
 
 inputs:
   labels:
     description: A comma-separated list of labels
+    type: string
     required: true
   action:
     description: "`add` or `remove` label"
+    type: string
     default: add
     required: false
 
@@ -17,8 +19,11 @@ runs:
   steps:
     - name: 🔖 Add or remove labels
       shell: bash
-      run: ${{ github.action_path }}/add-or-remove-labels.sh "${{ github.event.number }}" "${{ inputs.action }}" "${{ inputs.labels }}"
-
+      env:
+        ISSUE_NUMBER: ${{ github.event.number }}
+        ACTION: ${{ inputs.action }}
+        LABELS: ${{ inputs.labels }}
+      run: $GITHUB_ACTION_PATH/add-or-remove-labels.sh "$ISSUE_NUMBER" "$ACTION" "$LABELS"
 branding:
   icon: tag # 🏷️
   color: yellow # 🟡
