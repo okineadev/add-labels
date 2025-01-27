@@ -25,6 +25,10 @@ name: 🔖 Add Label
 
 on: [pull_request_target]
 
+permissions:
+  issues: write
+  pull-requests: write
+
 jobs:
   add-label:
     name: 🔖 Add Label
@@ -39,3 +43,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
+
+This GitHub Action is based on the [`gh`](https://github.com/cli/cli) tool without any other dependencies
+
+Additionally, [`gh`](https://github.com/cli/cli) is pre-installed in **GitHub Actions** runners and pre-authenticated
+
+## ❤️ Support
+
+If you like this project, consider supporting it by starring ⭐ it on GitHub, sharing it with your friends, or [buying me a coffee ☕](https://github.com/okineadev/add-labels?sponsor=1)
