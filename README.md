@@ -33,7 +33,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4.2.2
-      - uses: material-extensions/add-labels@v1.0.5
+      - uses: okineadev/add-labels@v1.0.5
         with:
           labels: bug,help-needed
         env:
